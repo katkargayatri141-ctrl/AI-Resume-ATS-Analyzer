@@ -96,14 +96,6 @@ uvicorn app.main:app --reload
 
 Open `frontend/index.html` using Live Server.
 
----
-
-## 📸 Screenshots
-
-(Add your project screenshots here)
-
----
-
 ## 👩‍💻 Developed By
 
 **Gayatri Katkar**
