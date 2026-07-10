@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ResumeIQ AI</title>
+
+<link rel="stylesheet" href="result.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <h2>🤖 ATS AI</h2>
+
+        <p>Resume Analyzer</p>
+
+    </div>
+
+    <ul>
+
+        <li><a href="#scoreSection">🎯 ATS Score</a></li>
+
+        <li><a href="#summarySection">📄 Summary</a></li>
+
+        <li><a href="#strengthSection">✅ Strengths</a></li>
+
+        <li><a href="#weaknessSection">⚠️ Weaknesses</a></li>
+
+        <li><a href="#skillsSection">🚀 Missing Skills</a></li>
+
+        <li><a href="#suggestionSection">💡 Suggestions</a></li>
+
+        <li><a href="#analyticsSection">📊 Analytics</a></li>
+
+        <li><a href="#jobSection">🎯 Job Match</a></li>
+
+        <li onclick="window.print()">
+
+            📥 Download Report
+
+        </li>
+        <br>
+        <li onclick="window.location.href='index.html'">
+
+            🔄 Analyze Another Resume
+
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="content">
+
+<header>
+
+<h1>📄 AI Resume ATS Report</h1>
+
+<p>
+
+Professional Resume Analysis powered by AI
+
+</p>
+
+</header>
+
+<!-- ================= ATS SCORE ================= -->
+
+<section class="card" id="scoreSection">
+
+<h2>🎯 ATS Score</h2>
+
+<div class="score-circle">
+
+<span id="score">0%</span>
+
+</div>
+
+<h3 id="scoreText"></h3>
+
+</section>
+
+<!-- ================= SUMMARY ================= -->
+
+<section class="card" id="summarySection">
+
+<h2>📄 Professional Summary</h2>
+
+<p id="summary"></p>
+
+</section>
+
+<!-- ================= STRENGTHS ================= -->
+
+<section class="card" id="strengthSection">
+
+<h2>✅ Strengths</h2>
+
+<ul id="strengths"></ul>
+
+</section>
+<!-- ================= WEAKNESSES ================= -->
+
+<section class="card" id="weaknessSection">
+
+    <h2>⚠️ Weaknesses</h2>
+
+    <ul id="weaknesses"></ul>
+
+</section>
+
+<!-- ================= MISSING SKILLS ================= -->
+
+<section class="card" id="skillsSection">
+
+    <h2>🚀 Missing Skills</h2>
+
+    <div id="skills" class="skills"></div>
+
+</section>
+
+<!-- ================= AI SUGGESTIONS ================= -->
+
+<section class="card" id="suggestionSection">
+
+    <h2>💡 AI Suggestions</h2>
+
+    <ul id="suggestions"></ul>
+
+</section>
+
+<!-- ================= ANALYTICS ================= -->
+
+<section class="card" id="analyticsSection">
+
+    <h2>📊 Resume Analytics</h2>
+
+     <div class="analytics-grid">
+
+    <div class="analytics-box">
+        <h3>✅ Strengths</h3>
+        <h1 id="strengthCount">0</h1>
+    </div>
+
+    <div class="analytics-box">
+        <h3>⚠ Weaknesses</h3>
+        <h1 id="weaknessCount">0</h1>
+    </div>
+
+    <div class="analytics-box">
+        <h3>🚀 Missing Skills</h3>
+        <h1 id="skillCount">0</h1>
+    </div>
+
+</div>
+
+</section>
+
+<!-- ================= JOB MATCH ================= -->
+
+<section class="card" id="jobSection">
+
+    <h2>🎯 Resume vs Job Description</h2>
+
+    <p class="sub-text">
+
+        Paste the Job Description below to check how well your resume matches the role.
+
+    </p>
+
+    <textarea
+        id="jobDescription"
+        rows="8"
+        placeholder="Paste Job Description here..."></textarea>
+
+    <button
+        id="matchBtn"
+        class="matchBtn">
+
+        🔍 Analyze Match
+
+    </button>
+
+    <div
+        id="matchResult"
+        class="match-card"
+        style="display:none;">
+
+        <h2>🎯 Job Match Result</h2>
+
+        <div class="match-score">
+
+            <span id="matchScore">0%</span>
+
+        </div>
+
+        <p id="matchText"></p>
+
+    </div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="result.js"></script>
+
+</body>
+
+</html>
