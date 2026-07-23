@@ -8,22 +8,28 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 def analyze_resume(resume_text: str):
 
     prompt = f"""
-You are an expert ATS Resume Reviewer.
+You are an Expert ATS Resume Reviewer.
 
-Analyze the following resume.
+Analyze the following resume like a professional recruiter.
 
 Return ONLY valid JSON.
 
-JSON format:
-
 {{
-    "ats_score": number,
-    "summary": "",
-    "strengths": [],
-    "weaknesses": [],
-    "missing_skills": [],
-    "suggestions": []
+  "ats_score": 0,
+  "summary": "",
+  "strengths": [],
+  "weaknesses": [],
+  "missing_skills": [],
+  "suggestions": []
 }}
+
+Rules:
+- ATS score should be between 0 and 100.
+- Give a professional summary.
+- Mention at least 3 strengths.
+- Mention at least 3 weaknesses.
+- Mention important missing skills.
+- Give practical suggestions for improvement.
 
 Resume:
 
@@ -45,4 +51,18 @@ Resume:
 
     text = text.strip()
 
-    return json.loads(text)
+    try:
+        return json.loads(text)
+
+    except Exception:
+
+        return {
+            "ats_score": 0,
+            "summary": "Unable to analyze the resume.",
+            "strengths": [],
+            "weaknesses": [],
+            "missing_skills": [],
+            "suggestions": [
+                "Please upload a valid resume."
+            ]
+        }

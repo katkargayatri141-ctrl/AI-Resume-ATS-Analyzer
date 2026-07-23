@@ -1,9 +1,3 @@
-// =======================================
-// AI Resume ATS Analyzer
-// result.js - Part 1
-// =======================================
-
-// Get Resume Data
 const data = JSON.parse(localStorage.getItem("resumeResult"));
 
 if (!data) {
@@ -14,9 +8,6 @@ if (!data) {
 
 }
 
-// ==========================
-// ATS SCORE
-// ==========================
 
 const score = document.getElementById("score");
 const scoreText = document.getElementById("scoreText");
@@ -44,15 +35,8 @@ else{
 
 }
 
-// ==========================
-// PROFESSIONAL SUMMARY
-// ==========================
-
 document.getElementById("summary").innerText = data.summary;
 
-// ==========================
-// Helper Function
-// ==========================
 
 function loadList(id, array){
 
@@ -80,10 +64,6 @@ function loadList(id, array){
 
 }
 
-// ==========================
-// STRENGTHS
-// ==========================
-
 loadList(
 
     "strengths",
@@ -92,10 +72,6 @@ loadList(
 
 );
 
-// ==========================
-// WEAKNESSES
-// ==========================
-
 loadList(
 
     "weaknesses",
@@ -103,10 +79,6 @@ loadList(
     data.weaknesses
 
 );
-
-// ==========================
-// SUGGESTIONS
-// ==========================
 
 loadList(
 
@@ -124,10 +96,6 @@ data.weaknesses.length;
 
 document.getElementById("skillCount").innerText =
 data.missing_skills.length;
-
-// ==========================
-// MISSING SKILLS
-// ==========================
 
 const skills = document.getElementById("skills");
 
@@ -163,10 +131,6 @@ else{
 
 }
 
-// ==========================
-// CARD ANIMATION
-// ==========================
-
 const cards=document.querySelectorAll(".card");
 
 cards.forEach((card,index)=>{
@@ -186,10 +150,6 @@ cards.forEach((card,index)=>{
     },index*120);
 
 });
-
-// =======================================
-// ANALYTICS CHART
-// =======================================
 
 const chartCanvas = document.getElementById("chart");
 
@@ -303,10 +263,6 @@ if (chartCanvas) {
 
 }
 
-// =======================================
-// JOB DESCRIPTION MATCH
-// =======================================
-
 const matchBtn = document.getElementById("matchBtn");
 
 if (matchBtn) {
@@ -395,10 +351,6 @@ if (matchBtn) {
 
 }
 
-// =======================================
-// SMOOTH SCROLL FOR SIDEBAR
-// =======================================
-
 document.querySelectorAll(".sidebar a").forEach(link => {
 
     link.addEventListener("click", function(e) {
@@ -420,10 +372,6 @@ document.querySelectorAll(".sidebar a").forEach(link => {
     });
 
 });
-
-// =======================================
-// CONSOLE MESSAGE
-// =======================================
 
 console.log("✅ AI Resume ATS Dashboard Loaded Successfully");
 console.log(data);
